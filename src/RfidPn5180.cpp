@@ -151,7 +151,7 @@ extern unsigned long Rfid_LastRfidCheckTimestamp;
 					// Reset to dummy-value if no card is there
 					// Necessary to differentiate between "card is still applied" and "card is re-applied again after removal"
 					// lastTimeDetected14443 is used to prevent "new card detection with old card" with single events where no card was detected
-					if (!lastTimeDetected14443 || (millis() - lastTimeDetected14443 >= 1000)) {
+					if (!lastTimeDetected14443 || (millis() - lastTimeDetected14443 >= 2000)) {
 						lastTimeDetected14443 = 0;
 						#ifdef PAUSE_WHEN_RFID_REMOVED
 							cardAppliedCurrentRun = false;
